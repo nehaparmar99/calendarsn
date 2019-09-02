@@ -47,7 +47,7 @@ int main()
    while(1)
     {
         system("cls");
-        printf("\t\tWHAT DO YOU WANT ME TO DO?\n\n\t\tPRESS\n\n\t\t1:TELL ME THE DAY\n\t\t2:PRINT ALL DAYS OF A MONTH\n\t\t3:ADD A NOTE\n\t\t4:SHOW ME THE HOLIDAYS OF A YEAR\n\t\t5:EXIT\n");
+        printf("\t\t\t\t\t\tWHAT DO YOU WANT ME TO DO?\n\n\t\t\t\t\t\t\tPRESS\n\n\t\t\t\t1:TELL ME THE DAY\n\t\t\t\t2:PRINT ALL DAYS OF A MONTH\n\t\t\t\t3:ADD A NOTE\n\t\t\t\t4:SHOW ME THE HOLIDAYS OF A YEAR\n\t\t\t\t5:Exit\n\n");
         printf("\t\tENTER YOUR CHOICE : ");
         scanf("%d",&ch);
         switch(ch)
@@ -67,7 +67,6 @@ int main()
                     while(choice!='q')
                     {
                         system("cls");
-                        fflush(stdin);
                         printMonth(m,y,20,5);
                         choice = getch();
                         if(choice == 'n')
@@ -89,17 +88,18 @@ int main()
                         }
                     }
                     break;
-            case 3:AddNote();//AddNote();
+            case 3: system("cls");
+                    AddNote();//AddNote();
                     break;
-            case 4:printf("ENTER YEAR\n");
-                scanf("%d",&y);
-                showHolidays(y);//shows important holidays();
-                printf("\nPress any key to continue......");
+            case 4: system("cls");
+                    printf("ENTER YEAR\n");
+                    scanf("%d",&y);
+                    showHolidays(y);//shows important holidays();
+                    printf("\n\nPress any key to continue......");
                     getch();
                     break;
             case 5: exit(0);
-            default: printf("INCORRECT CHOICE.\nTry Again.Press any key to continue...");
-                     getch();
+            default : printf("INCORRECT CHOICE");
         }
     }
     return 0;
@@ -299,8 +299,9 @@ void showNote(int mmm){
 }
 
 void showHolidays(int ye){
+    int k;
     printf("THE GAZETTED HOLIDAYS ARE\n");
-for(int k=0;k<4;k++)
+for( k=0;k<4;k++)
     printf("%d.%d.%d is %s\n",hh[k].d,hh[k].m,ye,hh[k].h);
 }
 
